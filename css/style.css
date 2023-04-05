@@ -1,0 +1,1293 @@
+    /*
+em - от текущего шоифта
+% - от родительской ширины
+rem - от стиля html
+vw – 1% ширины окна
+vh – 1% высоты окна
+vmin – наименьшее из (vw, vh), в IE9 обозначается vm
+vmax – наибольшее из (vw, vh)
+*/
+
+      /*Универсальным селектором сбрасываем стандартные стили браузера по умолчанию*/
+
+      * {
+	      margin: 0;
+	      padding: 0;
+	      box-sizing: border-box;
+	      }
+
+	  body {
+	      font-family: OpenSans, Arial;
+	      }
+	  
+       /*Подключаем внешние шрифты*/
+
+	  @font-face {
+	      font-family: "OpenSans";
+	      src: url(../fonts/OpenSans-Regular.woff);
+	      font-weight: 400;
+	      font-style: normal;
+	      }
+	  
+	  @font-face {
+	      font-family: "OpenSans";
+	      src: url(../fonts/OpenSans-Bold.woff);
+	      font-weight: 700;
+	      font-style: normal;
+	      }
+	  	    
+	  /* WEB PAGE HEADER */
+	  
+	  .header {
+	      color: #ffffff;
+	      position: relative;
+	      background-color: #000000;
+	      background-image: url(../images/banner-bg.jpg);
+	      background-repeat: no-repeat;
+	      background-position: center center;
+	      background-size: cover;
+	      z-index: 0;
+	      }
+	  
+	  .header::after {
+	      content: "";
+	      position: absolute;
+	      top: 0px;
+	      bottom: 0px;
+	      left: 0px;
+	      right: 0px;
+	      background-color: #000000;
+	      opacity: 0.6;
+	      z-index: -1;
+	      }
+	  
+	  .header-container {
+	      max-width: 1200px;
+	      margin: 0 auto;
+	      padding: 25px 15px 15px 17px;
+	      }
+	  
+	  .header-nav {
+	      display: flex;
+	      justify-content: space-between;
+	      align-items: center;
+	      }
+	  
+	  .logo {
+	      width: 180px;
+	      }
+	  
+	   .menu-list {
+	      display: flex;
+	      flex-wrap: wrap;
+	      }
+	  
+	  .menu-item-list {
+	      list-style: none;  
+	      }
+	  
+	  .menu-item-list:nth-child(n+2) {
+	      margin-left: 35px;
+	      }
+	  
+	  .menu-link {
+	      font-size: 13px;
+	      color: #ffffff;
+	      text-transform: uppercase;
+	      text-decoration: none;
+	      }
+	  
+	  .menu-link:hover {
+	      text-decoration: underline;
+	      }
+	  
+	  .header-content {
+	      /*max-width: 679px;*/
+	      width: 100%;
+	      margin: 105px auto 115px;
+	      }
+	  
+	  .header-description {
+	      text-transform: uppercase;
+	      text-align: center;
+	      font-size: 2.8125rem;
+	      line-height: 4.6875rem;
+	      }
+	  
+	  /* BLOCK TRENDS */
+
+	   .trends_block {
+	      margin-top: 64px;
+	      }
+
+	   .trends {
+	      display: flex;
+	      justify-content: space-between;
+	      }
+
+         /*Stylization of the headings 
+         of the trends block and the craft block стр.131-146*/
+
+       .buzzer_header {
+	      text-align: center;
+	      font-size: 1.25rem;
+	      text-transform: uppercase;
+	      margin-bottom: 29px;
+	      line-height: 1.8125rem;
+	      }
+	
+	   .buzzer_header::after {
+	      display: block;
+	      margin: 14px auto 0;
+	      content: "";
+	      width: 66px;
+	      height: 3px;
+	      background-color: #b59f5b;
+	      }
+	
+          /*Stylization of the trends block sizes стр.150-168*/
+
+ 	  .trend {
+	      width: calc((100% - 12px)/4);
+	      min-height: calc(0.1951*(100vw - 12px));
+	      background-color: #000000;
+	      position: relative;
+	      z-index: 0;
+	      }
+	  
+	  .trend::after {
+	      content: "";
+	      position: absolute;
+	      top: 0px;
+	      bottom: 0px;
+	      left: 0px;
+	      right: 0px;
+	      background-color: #000000;
+	      opacity: 0.6;
+	      z-index: -1;
+	      }
+	      
+          /*Stylization of the trends block images стр.172-198*/
+
+	  .garden {
+	      background-image: url(../images/trend1.jpg);
+	      background-repeat: no-repeat;
+	      background-position: center center;
+	      background-size: cover;
+	      }
+	
+	  .cheeses {
+	      background-image: url(../images/trend2.jpg);
+	      background-repeat: no-repeat;
+	      background-position: center center;
+	      background-size: cover;
+	      }
+	
+	  .journey {
+	      background-image: url(../images/trend3.jpg);
+	      background-repeat: no-repeat;
+	      background-position: center center;
+	      background-size: cover;
+	      }
+	 
+	  .vitamin {
+	      background-image: url(../images/trend4.jpg);
+	      background-repeat: no-repeat;
+	      background-position: center center;
+	      background-size: cover;
+	      }
+	
+       /*Stylization of the frame of the trend blocks стр.202-209*/
+
+	  .trend_border {
+	      border: 3px solid #b59f5b;
+	      position: absolute;
+	      left: 20px;
+	      right: 20px;
+	      bottom: 15px;
+	      padding: 30px 20px;
+	      }
+	
+	  .trend-tag {
+	      display: flex;
+	      }
+	  
+	  .trend-tag-list {
+	      list-style: none;
+	      line-height: 1;
+	      }
+	  
+	  .trend-tag-list:nth-child(n+2) {
+	      margin-left: 20px;
+	      }
+	  
+	  .trend-tag-link {
+	      text-transform: uppercase;
+	      font-weight: 700;
+	      color: #b59f5b;
+	      text-decoration: none;
+	      font-size: 0.875rem;
+	      }
+	
+	  .trend-tag-link:hover {
+	      text-decoration: underline;
+	      }
+	  
+	  .trend-header {
+	      margin-top: 8px;
+	      }
+	  
+	  .trend-header-content {
+	      line-height: 1.5rem;
+	      }
+	  
+	  .trend-header-link {
+	      text-transform: uppercase;
+	      color: #ffffff;
+	      font-size: 1.25rem;
+	      text-decoration: none;
+	      }
+	  
+	  .trend-header-link:hover {
+	      color: #b59f5b;
+	      }  
+	
+         /*THE MAIN PART OF THE WEB PAGE*/
+
+	  .page {
+	      max-width:  1200px;
+	      margin-left: auto;
+	      margin-right: auto;
+	      margin-top: 60px;
+	      margin-bottom: 64px;
+	      padding: 0 15px;
+	      display: flex;
+	      justify-content: space-between;
+	      }
+	  
+       /*BLOCK MAIN стр.277-367*/
+
+	  .main {
+	      max-width: 780px;
+	  	  }
+	  
+	  .post {
+	      display: flex;
+	      align-items: start;
+	      justify-content: space-between;
+	      }
+	  
+	  .post:nth-child(n+2) {
+	      margin-top: 61px;
+	      }
+	  
+	  .post-image {
+	      width: calc((100% - 30px)*0.5066);
+	      }
+	  
+	  .post-content {
+	      margin-left: 32px;
+	      }
+	  
+	  .post-tag {
+	      display: flex;
+	      }
+	  
+	  .post-tag-list {
+	      list-style: none;
+	      line-height: 1;
+	      }
+	  
+	  .post-tag-list:nth-child(n+2) {
+	      margin-left: 20px;
+	      }
+	  
+	  .post-tag-link {
+	      text-transform: uppercase;
+	      font-weight: bold;
+	      color: #b59f5b;
+	      text-decoration: none;
+	      font-size: 14px;
+	      }
+	
+	  .post-tag-link:hover {
+	      text-decoration: underline;
+	      }
+	  
+	  .post-header {
+	      margin-top: 8px;
+	      }
+	  
+	  .post-header-content {
+	      line-height: 1;
+	      }
+	  
+	  .post-header-link {
+	      text-transform: uppercase;
+	      color: #000000;
+	      font-size: 20px;
+	      text-decoration: none;
+	      }
+	  
+	  .post-header-link:hover {
+	      color: #b59f5b;
+	      }
+	  
+	  .date-author {
+	      display: flex;
+	      margin-top: 25px;
+	      }
+	  	  
+	  .date-content {
+	      color: #888888;
+	      font-size: 12px;
+	      }
+	  
+	  .author-content {
+	      margin-left: 12px;
+	      font-size: 12px;
+	      font-weight: bold;
+	      }
+	  
+	  .post-main{
+	      margin-top: 45px;
+	      }
+	  
+	  .post-text {
+	      font-size: 15px;
+	      line-height: 1.5;
+	      margin-bottom: 10px;
+	      }
+	  
+	  /*BLOCK ASIDE стр.364-572*/
+	  
+	  .aside {
+	      width: 270px;
+	      }
+	  
+	  /*NEW POSTS SECTION*/
+	  
+	  .aside-sections:nth-child(n+2) {
+	      margin-top: 53px;
+	      }
+	  
+	  .aside-headers {
+	      font-size: 14px;
+	      text-transform: uppercase;
+	      text-align: center;
+	      margin-bottom: 29px;
+	      line-height: 1;
+	      }
+	  
+	  .aside-headers::after {
+	      display: block;
+	      margin-left: auto;
+	      margin-right: auto;
+	      margin-top: 14px;
+	      content: "";
+	      width: 66px;
+	      height: 3px;
+	      background-color: #e1d9bd;
+	      }
+	  
+	  .new-post {
+	      display: flex;
+	      align-items: start;
+	      }
+	  
+	  .new-post:nth-child(n+2) {
+	      margin-top: 22px;
+	      }
+	  
+	  .new-post-image {
+	      width: 70px;
+	      }
+	  
+	  .new-post-content {
+	      margin-left: 18px;
+	      width: 182px;
+	      margin-top: -8px;
+	      }
+	  
+	  .new-post-date {
+	      font-size: 12px;
+	      }
+	  
+	  .new-post-header {
+	      font-size: 14px;
+	      text-transform: uppercase;
+	      line-height: 1.3;
+	      }
+	  
+	  .new-post-link {
+	      text-decoration: none;
+	      color: #000000;
+	      }
+	  
+	  .new-post-link:hover {
+	      color: #b59f5b;
+	      }
+	  
+	  /*SEARCH FORM*/
+	  
+	  .search {
+	      margin-top: 58px;
+	      }
+	  
+	  .hidden-span {
+	      width: 1px;
+	      height: 1px;
+	      clip: rect(1px, 1px, 1px, 1px);
+	      position: absolute;
+	      }
+	  
+	  .search-field {
+	      background-color: #f4f7f6;
+	      border: 0px;
+	      height: 50px;
+	      padding: 0px 18px;
+	      font-family: inherit;
+	      font-size: 13px;
+	      width: 220px;
+	      vertical-align: top;
+	      }
+	  
+	  .search-field:focus {
+	      outline: 0px;
+	      border-bottom: 1px solid #ebe7d7;
+	      }
+	  
+	  .search-button {
+	      width: 50px;
+	      height: 50px;
+	      background-image: url(../svg/search.svg);
+	      background-repeat: no-repeat;
+	      background-position: center center;
+	      background-color: #b59f5b;
+	      background-size: 18px;
+	      border: 0px;
+	      }
+	  
+	  .search-button:hover {
+	      cursor: pointer;
+	      }
+	  
+	  /*SUBSCRIPTION FORM*/
+	  
+	  .email-field {
+	  /*добавил*/
+	      margin-top: -8px;
+	      background-color: #f4f7f6;
+	      border: 0px;
+	      height: 50px;
+	      padding: 0px 18px;
+	      font-family: inherit;
+	      font-size: 13px;
+	      width: 100%;
+	      }
+	  
+	  .email-field:focus {
+	      outline: 0px;
+	      border-bottom: 1px solid #ebe7d7;
+	      }
+	  
+	  .subscribe-button {
+	      margin-top: 16px;
+	      width: 100%;
+	      height: 50px;
+	      background-color: #b59f5b;
+	      border: 0px;  
+	      font-family: inherit;
+	      color: #ffffff;
+	      font-weight: bold;
+	      font-size: 13px;
+	      text-transform: uppercase;
+	      }
+	  
+	  .subscribe-button:hover {
+	      border-top: 1px solid #b9b29b;
+	      cursor: pointer;
+	      }
+	  
+	  /*TAGS SECTION*/
+	  
+	  .tags {
+	      display: flex;
+	      flex-wrap: wrap;
+	      }
+	  
+	  .tag-list {
+	      list-style: none;
+	      margin-right: 6px;
+	      margin-bottom: 6px;
+	      }
+	  
+	  .tag {
+	      display: inline-block;
+	      text-transform: uppercase;
+	      color: #000000;
+	      text-decoration: none;
+	      font-size: 12px;
+	      font-weight: bold;
+	      border: 3px solid #eeeeee;
+	      padding: 6px 13px;
+	      height: 30px;
+	      }
+	  
+	  .tag:hover {
+	      border: 3px solid #b59f5b;
+	      }
+	  
+	  /*TOPIC SECTION*/
+	  
+	  .topics {
+	      margin-top: -20px;
+	      }
+	  
+	  .topic-item {
+	      list-style: none;
+	      border-bottom: 1px solid #eeeeee;
+	      height: 47px;
+	      padding: 14px 0px;
+	      }
+	  
+	  .topic-link {
+	      vertical-align: middle;
+	      color: #000000;
+	      text-decoration: none;
+	      font-weight: bold;
+	      font-size: 14px;
+	      }
+	  
+	  .topic-link:hover {
+	      color: #b59f5b;
+	      }
+	  
+	  .topic-link-index {
+	      vertical-align: top;
+	      font-weight: bold;
+	      font-size: 12px;
+	      color: #b59f5b;
+	      }
+
+	
+	  /*CRAFT GOODS*/
+
+	  .our_items {
+	      max-width: 1200px;
+	      margin: 0 auto;
+	      padding: 0px 15px;
+	      }
+	
+        .items_block {
+
+          }
+
+	  .items_buzzer {
+	      display: flex;
+	      justify-content: space-between;
+	      }
+	
+	  .item_border {
+	      border: 3px solid #b59f5b;
+	      width: calc((100% - 132px)/3);
+	      min-height: 261px;
+	      position: relative;
+	      margin-top: 175px;
+	      padding: 55px 21px 25px;
+	      }
+	
+	  .item_pic {
+	      position: absolute;
+	      top: -175px;
+	      left: 5.88%;
+	      right: 5.88%;
+	      z-index: -1;
+	      text-align: center;
+	      }
+	
+	  .item_pic_source {
+	      width: 100%;
+	      display: block;
+	      }
+	
+	  .item_img {
+	      width: 100%;
+	      display: block;
+	      }
+	
+	  .item-header {
+	      line-height: 1.5rem;
+	      text-transform: uppercase;
+	      font-size: 1.25rem;
+	      text-decoration: none;
+	      color: #0f0d0e;
+          font-weight: 700;
+	      }
+	
+	  .item-description {
+	      margin-top: 9px;
+	      font-size: calc(1rem - 1px);
+	      }
+	
+	  .item-link {
+	      color: #b59f5b;
+	      text-decoration: none;
+	      }
+	
+	  .item-link:hover {
+	      text-decoration: underline;
+	      }
+	
+	  .buy {
+	      display: flex;
+	      margin-top: 24px;
+	      justify-content: space-between;
+	      align-items: center; 
+	      }
+	
+	  .old-price {
+	      line-height: 1.5rem;
+	      text-transform: uppercase;
+	      font-weight: 700;
+	      color: #000000;
+	      font-size: 0.875rem;
+	      text-decoration: line-through;
+	      }
+
+	   .old-price2 {
+	      line-height: 1.5rem;
+	      text-transform: uppercase;
+	      font-weight: 700;
+	      color: #000000;
+	      font-size: 0.875rem;
+	      text-decoration: line-through;
+	      opacity: 0;
+	      }
+	
+       .new-price {
+	      line-height: 1.5rem;
+	      text-transform: uppercase;
+	      font-weight: bold;
+	      color: #000000;
+	      font-size: 1.25rem;
+
+	      }
+	
+	  .toshop-button {
+	      /* width: 8.373vw; */
+	      min-height: 50px;
+	      padding: 19px 29px;
+	      background-color: #b59f5b;
+	      border: 0px;  
+	      font-family: inherit;
+	      color: #ffffff;
+	      font-weight: 700;
+	      font-size: 0.875rem;
+	      text-transform: uppercase;
+	      cursor: pointer;
+	      }
+	  
+	  .toshop-button:hover {
+	      border-top: 1px solid #b9b29b;
+	      cursor: pointer;
+	      }
+  		
+	  /*FOOTER BLOCK*/
+	  
+	  .footer {
+	      margin-top: 64px;
+	   	  }
+	  
+	  .social-bar {
+	      display: flex;
+	      padding: 30px 0px;
+	      justify-content: center;
+	      background-color: #f4f7f6;
+	      background-size: cover;
+	      }
+	  
+	  .social-icon-list {
+	      list-style: none;  
+	      }
+	  
+	  .social-icon-list:nth-child(n+2) {
+	      margin-left: 22px;
+	      }
+	  
+	  .social-icon {
+	      display: block;
+	      width: 25px;
+	      height: 20px;
+	      background-repeat: no-repeat;
+	      background-position: center center;
+	      background-size: contain;
+	      }
+	  
+	  .social-icon_twitter {
+	      background-image: url(../svg/004-twitter.svg);
+	      }
+	  
+	  .social-icon_pinterest {
+	      background-image: url(../svg/001-pinterest.svg);
+	      }
+	  
+	  .social-icon_facebook {
+	      background-image: url(../svg/001-dribbble.svg);
+	      }
+	  
+	  .social-icon_instagram {
+	      background-image: url(../svg/005-instagram.svg);
+	      }
+	  
+	  .social-icon_tumblr {
+	      background-image: url(../svg/003-tumblr.svg);
+	      }
+	  
+	  .copyright {
+	      text-align: center;
+	      margin-top: 68px;
+	      margin-bottom: 40px;
+	      }
+	  
+	  .copyright-info {
+	       color: #999999;
+	       font-size: 0.75rem;
+	       font-weight: 700;
+	       text-decoration: none;
+	       }
+	
+	    /*MEDIA QUERIES*/
+
+	    /*Скрываем бургер МЕНЮ*/
+
+	  @media (min-width: 1201px) {
+
+	    .menu_button {
+	        display: none;
+	        }
+	   }
+	
+
+	  @media (max-width: 1200px) {
+	    
+	    .header{
+	    	color: #ffffff;
+	        position: relative;
+	        background-color: #000000;
+	        background-repeat: no-repeat;
+	        background-position: center center;
+	        background-size: cover;
+	        z-index: 0;
+	    	background-image: url(../images/banner-bg-tablet.jpg);
+	        } 
+
+	    .header-container {
+	    	max-width: 768px;
+	        padding-left: 35px;
+	        padding-right: 35px;
+	        }
+	
+	    .header-description {
+	       font-size: 2.8125rem;
+	        }
+	
+	    .menu-list {
+	        display: none;
+	        }
+
+	    /*Стилизуем бургер меню стр.801-833*/
+
+	    .menu_button {
+	        width: 23px;
+	        height: 19px;
+	        position: relative;
+	        cursor: pointer;
+	        }
+	    
+	    .menu_button_label {
+	        position: absolute;
+	        top: 8px;
+	        width: 23px;
+	        height: 3px;
+	        background-color: #fff;
+	        margin-top: 5px;
+	        margin-bottom: 5px;
+	        }
+	
+	    .menu_button_label::before,
+	    .menu_button_label::after {
+	        content: "";
+	        width: 23px;
+	        height: 3px;
+	        background-color: #fff;
+	        position: absolute;
+	        }
+	
+	    .menu_button_label::before {
+	        margin-top: -8px;
+	        }
+	
+	    .menu_button_label::after {
+	        margin-top: 8px;
+	        }
+	
+	    .page {
+	        padding-left: 35px;
+	        padding-right: 35px;
+	        }
+	
+	    .trend {
+	        margin-top: 4px;
+	        }
+	
+	    .trend_border {
+	        padding: 8.5% 5.5%;
+	        }
+	
+	    .trend-tag-list:nth-child(n+2) {
+	        margin-left: calc(100vw/56 - 10px/7);
+	        }
+	    
+	    .trend-tag-link {
+	        font-size: 0.875rem;
+	        /*line-height: 1;*/
+	        }
+	  
+	    .trend-header-link {
+	        font-size: 1.5vw;
+	        }
+	
+	    .trend-header-content {
+	        line-height: calc(2.829vw - 12.3429px);;
+	        }
+	
+	    .our_items {
+	        padding: 0px 34px;
+	        }
+	
+	    .items_buzzer {
+	        flex-wrap: wrap;
+	        }
+	
+	    .item_border {
+	        width: calc((100% - 23px)/2);
+	        margin-top: calc(0.672*((100vw - 93px)/2) - 30px);
+	        margin-bottom: 28px;
+	        }
+	
+	    .item_pic {
+	        top: calc(30px - 0.672*((100vw - 93px)/2));
+	        }
+	
+	    .main {
+	        max-width: 880px;
+	        }
+	
+	    .post {
+	        flex-direction: column;
+	        width: calc(100% - 36px);
+	        } 
+	
+	    .post-image {
+	        width: 100%;
+	        }
+	
+	    .post:nth-child(n+2) {
+	        margin-top: 0px;
+	        }
+	
+	    .post-content {
+	        width: 100%;
+	        margin-top: 16px;
+	        margin-bottom: 8px;
+	        margin-left: 0px;
+	        }
+	
+	    .post:nth-child(n+2)::before {
+	        display: block;
+	        margin-top: 0px;
+	        margin-bottom: 40px;
+	        content: "";
+	        width: 100%;
+	        height: 3px;
+	        background-color: #eeeeee;
+	        }
+	
+
+	  @media (max-width: 1200px) and (orientation: portrait)  {
+	  
+	    .header{
+	    	color: #ffffff;
+	        position: relative;
+	        background-color: #000000;
+	        background-repeat: no-repeat;
+	        background-position: center center;
+	        background-size: cover;
+	        z-index: 0;
+	    	background-image: url(../images/banner-bg-tablet.jpg);
+	        } 
+
+	    .trends {
+	        flex-wrap: wrap;
+	        }
+	
+	    .trend {
+	        width: calc((100% - 4px)/2);
+	        min-height: calc(0.3902*(100vw - 4px));
+	        }
+	    } 
+	
+	   
+	
+	  @media (max-width: 640px) {
+
+	  	.header{
+	  		color: #ffffff;
+	        position: relative;
+	        background-color: #000000;
+	        background-repeat: no-repeat;
+	        background-position: center center;
+	        background-size: cover;
+	        z-index: 0;
+	    	background-image: url(../images/banner-mobile.jpg);
+	        }
+	
+	    .header-container {
+	    	max-width: 360px;
+	        padding-left: 15px;
+	        padding-right: 15px;
+	        }
+	
+	    .header-nav {
+	        flex-direction: column-reverse;
+	        }
+	
+	    .logo {
+	        margin-top: 185px;
+	        width: 75vw;
+	        }
+	
+	     .menu {
+	        margin-left: auto;
+	        }
+	
+	     .header-content {
+	        width: 80.6vw;
+	        height: 30.25vw;
+	        margin-left: auto;
+	        margin-right: auto;
+	        margin-top: 43px;
+	        margin-bottom: 167px;
+	        }
+	
+	    .header-description {
+	        font-size: 1.625rem;
+	        line-height: 2.25rem;
+	        }
+	
+	    .trends {
+	        flex-wrap: wrap;
+	        }
+	
+	    .trend {
+	        width: calc((100% - 4px)/2);
+	        min-height: calc(0.3902*(100vw - 4px));
+	        }
+	
+	    .trend-tag-list:nth-child(n+2) {
+	        margin-left: 18px;
+	        }
+	
+	    .trend-tag-link {
+	        font-size: 0.875rem;
+	        }
+	
+	    .trend-header-link {
+	        font-size: 1rem;
+	        line-height: 1.25rem;
+	        }
+	
+	    .page {
+	        margin-top: 45px;
+	        padding-left: 15px;
+	        padding-right: 15px;
+	        flex-direction: column;
+	        }
+	
+	    .post {
+	        flex-direction: column;
+	        width: 100%;
+	        }
+	
+	    .post-main {
+	        margin-top: 23px;
+	        }
+	 
+	    .aside {
+	        margin-top: 45px;
+	        width: 100%;
+	        }
+	
+	    .aside-sections:nth-child(n+2) {
+	        margin-top: 45px;
+	        }
+	
+	    .search-field {
+	        width: calc(100% - 50px);
+	        }
+	
+	    .new-post-content {
+	        width: 100%;
+	        }
+	
+	    .our_items {
+	        padding: 0px 15px;
+	        }
+	
+	    .item_border {
+	        width: 100%;
+	        margin-top: calc(0.8824*(100vw - 30px) - 30px);
+	        margin-bottom: 25px;
+	        }
+	
+	    .item_pic {
+	        top: calc(30px - (0.8824*(100vw - 30px)));
+	        }
+	   }
+	
+	   @media (max-width: 640px) and (orientation: portrait) {
+
+	   	.header{
+	   		color: #ffffff;
+	        position: relative;
+	        background-color: #000000;
+	        background-repeat: no-repeat;
+	        background-position: center center;
+	        background-size: cover;
+	        z-index: 0;
+	    	background-image: url(../images/banner-mobile.jpg);
+	        }
+	
+	    .trend {
+	        width: 100%;
+	        height: 63vw;
+	        }
+	   } 
+	
+		
+	    /* POP UP */
+	
+	    
+.page_popup {
+  font-size: 0.8125rem;
+  color: #000000;
+  font-weight: 400;
+  font-family: "Open Sans";
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3; /*Делаем блок невидимым*/
+  visibility: hidden;
+}
+.popup {
+  box-sizing: border-box;
+  position: fixed;
+  min-width: 330px;
+  max-width: 392px;
+  height: 589px;
+  background: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  visibility: hidden;
+  display: none;
+  }
+.feedback-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.8125rem;
+  color: #000000;
+  margin: 54px auto 11px;
+}
+.feedback-title::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 4px;
+  background-color: #b59f5b;
+  margin: 11px auto 26px;
+}
+.select {
+  box-sizing: border-box;
+  width: 330px;
+  height: 48px;
+  padding-left: 21px;
+  padding-right: 25px;
+  margin: 20px auto 35px;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../svg/form-arrows.svg"); /*Ссылка на иконку*/
+  background-repeat: no-repeat; /*Убираем повтор изображения*/
+  background-position: right 5px center; /*Позиционируем иконку*/
+}
+.select:focus {
+  width: 330px;
+  height: 48px;
+  background-color: #f4f7f6;
+  border: 1px solid #b59f5b;
+}
+/* Мои экперименты */
+.select-radio {
+  font-size: 0.8125rem;
+  color: #000000;
+  font-weight: 400;
+  font-family: "Open Sans";
+}
+
+.form-group {
+  position: relative;
+  display: inline-block;
+}
+.form-group + .form-group {
+  margin-top: 10px;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* *********************************
+Реальная радиокнопка
+********************************* */
+
+.real-radio-btn {
+  /* Скрываем реальную радио кнопку*/
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* *********************************
+Фейковая радиокнопка
+********************************* */
+
+.custom-radio-btn {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border: 1px solid #b59f5b;
+  border-radius: 50%;
+  vertical-align: text-top;
+  margin-right: 5px;
+}
+
+.custom-radio-btn::before {
+  content: "";
+
+  /* Рисуем внутренний круг */
+
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background-color: #b59f5b;
+  border-radius: 50%;
+
+  /* Выравниваем по центру */
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  transition: 0.2s ease-in;
+}
+
+/* *********************************
+Магия переключения фейковой кнопки
+********************************* */
+
+.real-radio-btn:checked + .custom-radio-btn::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Подсветка для радиокнопки в фокусе */
+
+.real-radio-btn:focus + .custom-radio-btn {
+  box-shadow: 0px 0px 0px 1px #a3a4a7, 0px 0px 10px #7e9bbd;
+}
+
+.form-hint {
+  display: block;
+  width: 270px;
+  height: 27px;
+  font-size: 0.8125rem;
+  color: #000000;
+  margin-bottom: 10px;
+  margin-top: 35px;
+}
+
+.field {
+  max-width: 305px;
+  max-height: 133px;
+  margin-top: 10px;
+  padding: 22px 0 0 21px;
+  font-size: 0.8125rem;
+  color: #000000;
+}
+
+.popup__submit {
+  padding: 0px 18px;
+  font-size: 0.875rem;
+  line-height: 2.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  width: 330px;
+  height: 48px;
+  background-color: #b59f5b;
+  margin-top: 25px;
+  border: none;
+}
+/*Размер кнопки ОТПРАВИТЬ*/
+
+.popup__submit:hover {
+  width: 330px;
+  height: 48px;
+  background-color: #323232;
+}
+/*Радио-кнопка "Х"*/
+
+.popup__close {
+  background-image: url(../svg/form-x.svg);
+  background-repeat: no-repeat;
+  background-position: center  center;
+  width: 18px;
+  height: 18px;
+  border-radius: 16px;
+  background-color: #ffffff;
+
+  position: absolute;
+  top: -3.5em;
+  right: 0;
+}
+
+.popup__close:before,
+.popup__close:after {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  background-color: #ffffff;
+}
