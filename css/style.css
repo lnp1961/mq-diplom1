@@ -1078,7 +1078,8 @@ vmax – наибольшее из (vw, vh)
 		
 	    /* POP UP */
 	
-	    
+._hidden {
+   display: none;    
 .page_popup {
   font-size: 0.8125rem;
   color: #000000;
