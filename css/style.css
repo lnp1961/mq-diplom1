@@ -579,11 +579,7 @@ vmax – наибольшее из (vw, vh)
 	      padding: 0px 15px;
 	      }
 	
-        .items_block {
-
-          }
-
-	  .items_buzzer {
+      	  .items_buzzer {
 	      display: flex;
 	      justify-content: space-between;
 	      }
@@ -913,7 +909,7 @@ vmax – наибольшее из (vw, vh)
 	        height: 3px;
 	        background-color: #eeeeee;
 	        }
-	
+           }
 
 	  @media (max-width: 1200px) and (orientation: portrait)  {
 	  
@@ -1255,7 +1251,6 @@ label {
   font-family: "Open Sans";
   text-transform: uppercase;
   cursor: pointer;
-  color: #fff;
   width: 330px;
   height: 48px;
   background-color: #b59f5b;
