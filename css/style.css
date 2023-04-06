@@ -1074,216 +1074,169 @@ vmax – наибольшее из (vw, vh)
 		
 	    /* POP UP */
 	
-._hidden {
-   display: none;    
-.page_popup {
-  font-size: 0.8125rem;
-  color: #000000;
-  font-weight: 400;
-  font-family: "Open Sans";
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  min-height: 100%;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3; /*Делаем блок невидимым*/
-  visibility: hidden;
-}
-.popup {
-  box-sizing: border-box;
-  position: fixed;
-  min-width: 330px;
-  max-width: 392px;
-  height: 589px;
-  background: #ffffff;
-  padding-left: 30px;
-  padding-right: 30px;
-  visibility: hidden;
-  display: none;
-  }
-.feedback-title {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.8125rem;
-  color: #000000;
-  margin: 54px auto 11px;
-}
-.feedback-title::after {
-  content: "";
-  display: block;
-  width: 66px;
-  height: 4px;
-  background-color: #b59f5b;
-  margin: 11px auto 26px;
-}
-.select {
-  box-sizing: border-box;
-  width: 330px;
-  height: 48px;
-  padding-left: 21px;
-  padding-right: 25px;
-  margin: 20px auto 35px;
-  justify-content: center;
-  align-items: center;
-
-  background-image: url("../svg/form-arrows.svg"); /*Ссылка на иконку*/
-  background-repeat: no-repeat; /*Убираем повтор изображения*/
-  background-position: right 5px center; /*Позиционируем иконку*/
-}
-.select:focus {
-  width: 330px;
-  height: 48px;
-  background-color: #f4f7f6;
-  border: 1px solid #b59f5b;
-}
-/* Мои экперименты */
-.select-radio {
-  font-size: 0.8125rem;
-  color: #000000;
-  font-weight: 400;
-  font-family: "Open Sans";
-}
-
-.form-group {
-  position: relative;
-  display: inline-block;
-}
-.form-group + .form-group {
-  margin-top: 10px;
-}
-
-label {
-  cursor: pointer;
-}
-
-/* *********************************
-Реальная радиокнопка
-********************************* */
-
-.real-radio-btn {
-  /* Скрываем реальную радио кнопку*/
-  width: 0;
-  height: 0;
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-/* *********************************
-Фейковая радиокнопка
-********************************* */
-
-.custom-radio-btn {
-  position: relative;
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background: #ffffff;
-  border: 1px solid #b59f5b;
-  border-radius: 50%;
-  vertical-align: text-top;
-  margin-right: 5px;
-}
-
-.custom-radio-btn::before {
-  content: "";
-
-  /* Рисуем внутренний круг */
-
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  background-color: #b59f5b;
-  border-radius: 50%;
-
-  /* Выравниваем по центру */
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0);
-
-  transition: 0.2s ease-in;
-}
-
-/* *********************************
-Магия переключения фейковой кнопки
-********************************* */
-
-.real-radio-btn:checked + .custom-radio-btn::before {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* Подсветка для радиокнопки в фокусе */
-
-.real-radio-btn:focus + .custom-radio-btn {
-  box-shadow: 0px 0px 0px 1px #a3a4a7, 0px 0px 10px #7e9bbd;
-}
-
-.form-hint {
-  display: block;
-  width: 270px;
-  height: 27px;
-  font-size: 0.8125rem;
-  color: #000000;
-  margin-bottom: 10px;
-  margin-top: 35px;
-}
-
-.field {
-  max-width: 305px;
-  max-height: 133px;
-  margin-top: 10px;
-  padding: 22px 0 0 21px;
-  font-size: 0.8125rem;
-  color: #000000;
-}
-
-.popup__submit {
-  padding: 0px 18px;
-  font-size: 0.875rem;
-  line-height: 2.5rem;
-  color: #ffffff;
-  font-weight: 700;
-  font-family: "Open Sans";
-  text-transform: uppercase;
-  cursor: pointer;
-  width: 330px;
-  height: 48px;
-  background-color: #b59f5b;
-  margin-top: 25px;
-  border: none;
-}
-/*Размер кнопки ОТПРАВИТЬ*/
-
-.popup__submit:hover {
-  width: 330px;
-  height: 48px;
-  background-color: #323232;
-}
-/*Радио-кнопка "Х"*/
-
-.popup__close {
-  background-image: url(../svg/form-x.svg);
-  background-repeat: no-repeat;
-  background-position: center  center;
-  width: 18px;
-  height: 18px;
-  border-radius: 16px;
-  background-color: #ffffff;
-
-  position: absolute;
-  top: -3.5em;
-  right: 0;
-}
-
-.popup__close:before,
-.popup__close:after {
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  background-color: #ffffff;
-}
+	._hidden {
+          	   display: none;
+          	   }
+  
+        .popup {
+           	   display: flex;
+          	   align-items: center;
+          	   justify-content: center;
+          	   position: fixed;
+          	   background-color: rgba(0, 0, 0, 0.60);
+          	   top: 0px;
+          	   bottom: 0px;
+           	   left: 0px;
+          	   right: 0px;
+		   }
+  
+      	.form {
+           	   background-color: #fff;
+           	   width: 390px;
+           	   padding: 54px 30px;
+           	   position: relative;
+            	  }
+  
+      .form_header {
+    		  text-align: center;
+    		  font-size: 20px;
+    		  text-transform: uppercase;
+     		  margin-bottom: 29px;
+      		  line-height: 1;
+   		  }
+  
+      .feedback:nth-child(n+2) {
+      		 margin-top: 34px;  
+    		 }
+  
+      .form_header::after {
+      		display: block;
+      		margin-left: auto;
+      		margin-right: auto;
+      		margin-top: 14px;
+      		content: "";
+      		width: 66px;
+      		height: 3px;
+      		background-color: #e1d9bd;
+    		}
+  
+    	.field-label {
+      		font-size: 13px;
+      		line-height: 1;
+    		}
+  
+    	.period {
+      		display: inline-block;
+      		width: 100%;
+     		margin-top: 10px;
+      		border: none;
+        	background-color: #f4f7f6;  
+      		padding: 18px 20px;  
+     		font-size: 13px;
+      		color: rgba(0, 0, 0, 0.54);
+        	background-image: url(../svg/form-arrows.svg);
+      		background-size: 10px;
+      		background-repeat: no-repeat;
+      		background-position: right 14px center;
+      		-webkit-appearance: none;
+      		-moz-appearance: none;
+     		-ms-appearance: none;
+      		appearance: none !important;
+    		}
+    
+    	.period:focus {
+      		outline: 0px;
+      		border-bottom: 1px solid #ebe7d7;
+    		}
+  
+    	.feedback_radio {
+      		display: inline-block;
+      		font-size: 13px;
+    			}
+  
+    	.radio {
+      		position: absolute;
+      		clip: rect(1px, 1px, 1px, 1px);
+      		height: 1px;
+      		width: 1px;
+    			}
+  
+    	.radio:checked {
+      		outline: 3px solid #000000;
+      		outline-offset: 5px;
+    		}
+  
+    	.radio:checked ~ .feedback_radio-text::before {
+      		background-image: url(../svg/form-circle.svg);
+    		}
+  
+    	.feedback_radio {
+      		margin-top: 10px;
+    		}
+    
+    	.feedback_radio:nth-of-type(n+2) {
+      		margin-left: 15px;
+    		}
+    
+    	.feedback_radio-text::before {
+      		content: "";
+      		display: inline-block;
+      		vertical-align: middle;
+      		margin-right: 5px;
+                width: 20px;
+      		height: 20px;
+    
+      		background-image: url(../svg/form-empty-circle.svg);
+      		background-repeat: no-repeat;
+     		background-position: center  center;
+      		background-size: 20px;
+    		}
+  
+    	.feedback_field {
+    		max-width: 100%;
+      		min-width: 100%;
+      		margin-top: 10px;
+      		height: 131px;
+      		border: none;
+      		background-color: #f4f7f6;  
+      		padding: 18px 20px; 
+      		font-family: inherit; 
+      		font-size: 13px;
+      		color: rgba(0, 0, 0, 0.54);
+      		resize: none;
+    		}
+  
+    	.feedback_field:focus {
+      		outline: 0px;
+      		border-bottom: 1px solid #ebe7d7;
+    		}
+  
+    	.feedback_button {
+      		margin-top: 25px;
+      		width: 100%;
+      		height: 50px;
+      		background-color: #b59f5b;
+      		border: 0px;  
+      		font-family: inherit;
+      		color: #ffffff;
+      		font-weight: bold;
+      		font-size: 13px;
+      		text-transform: uppercase;
+    		}
+    
+    	.feedback_button:hover {
+      		border-top: 1px solid #b9b29b;
+      		cursor: pointer;
+   		}
+  
+    	.popup_close {
+          	background-image: url(../svg/form-x.svg);
+      		background-repeat: no-repeat;
+      		background-position: center  center;
+      		background-size: 20px;
+      		width: 20px;
+      		height: 20px;
+      		position: absolute;
+      		top: -18px;
+      		right: -22px;
+    		}
